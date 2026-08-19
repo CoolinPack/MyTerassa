@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terassa Ресторан</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- ГЛАВНАЯ СТРАНИЦА -->
+        <div id="page-home" class="page active">
+            <div class="header-banner">
+                <div class="header-overlay">
+                    <h1>Terassa</h1>
+                    <p>РЕСТОРАН В НЯЧАНГЕ</p>
+                </div>
+            </div>
+            
+            <div class="banner-buttons">
+                <button class="banner-btn" onclick="switchTab('menu')">Скидки</button>
+                <button class="banner-btn" onclick="switchTab('menu')">Акции</button>
+                <button class="banner-btn" onclick="switchTab('menu')">Промокод</button>
+            </div>
 
+            <div class="section-title">Популярные блюда сегодня</div>
+            <div id="popular-dishes" class="dishes-list"></div>
+        </div>
+
+        <!-- МЕНЮ -->
+        <div id="page-menu" class="page">
+            <h2 class="page-header">Меню</h2>
+            <input type="text" id="search-input" placeholder="Быстрый поиск блюд и напитков..." oninput="filterMenu()">
+            
+            <div class="category-dropdown-container">
+                <button class="category-toggle-btn" onclick="toggleCategoryDropdown()">
+                    <span id="selected-category-name">Все категории</span> ▼
+                </button>
+                <div id="category-dropdown" class="category-dropdown-content">
+                    <div onclick="selectCategory('Все')">Все категории</div>
+                    <div onclick="selectCategory('Салаты')">Салаты</div>
+                    <div onclick="selectCategory('Горячее')">Горячее</div>
+                    <div onclick="selectCategory('Напитки')">Напитки</div>
+                </div>
+            </div>
+
+            <div id="menu-dishes" class="dishes-list"></div>
+        </div>
+
+        <!-- КОРЗИНА -->
+        <div id="page-cart" class="page">
+            <h2 class="page-header">Корзина</h2>
+            <div id="cart-content">
+                <p class="empty-cart">Ваша корзина пуста</p>
+            </div>
+            <div id="cart-checkout-section" style="display:none;">
+                <div class="promo-box">
+                    <input type="text" id="promo-input" placeholder="Промокод">
+                    <button onclick="applyPromo()">Применить</button>
+                </div>
+                <div class="cart-totals">
+                    <div>Сумма: <span id="subtotal-price">0</span> VND</div>
+                    <div>Скидка: <span id="discount-price">0</span> VND</div>
+                    <div class="total-final">Итого: <span id="final-price">0</span> VND</div>
+                </div>
+                <div class="order-type-buttons">
+                    <button class="order-btn" onclick="makeOrder('Самовывоз')">Самовывоз</button>
+                    <button class="order-btn" onclick="makeOrder('Доставка')">Доставка (GPS)</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ПРОФИЛЬ -->
+        <div id="page-profile" class="page">
+            <div class="profile-card">
+                <div class="avatar" id="user-avatar-initial">A</div>
+                <h3 id="profile-name">Имя</h3>
+            </div>
+            <div class="profile-info-list">
+                <div class="profile-row"><span>Имя</span> <span id="p-name">-</span></div>
+                <div class="profile-row"><span>Дата рождения</span> <span id="p-birth">-</span></div>
+                <div class="profile-row"><span>Пол</span> <span id="p-gender">-</span></div>
+            </div>
+            
+            <div class="section-title">История заказов</div>
+            <div id="orders-history" class="history-list"></div>
+        </div>
+
+        <!-- НИЖНЯЯ НАВИГАЦИЯ -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" onclick="switchTab('home')">Главная</button>
+            <button class="nav-item" onclick="switchTab('menu')">Меню</button>
+            <button class="nav-item" onclick="switchTab('cart')">Корзина</button>
+            <button class="nav-item" onclick="switchTab('profile')">Профиль</button>
+        </nav>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
