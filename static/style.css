@@ -1,1 +1,302 @@
-
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f7f3ee;
+    color: #2b1d0c;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 90px;
+}
+#app {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 16px;
+}
+.page {
+    display: none;
+}
+.page.active {
+    display: block;
+}
+.header-banner {
+    background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+.header-overlay {
+    background: rgba(0, 0, 0, 0.45);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+.header-overlay h1 {
+    font-size: 32px;
+    margin: 0;
+    font-weight: 800;
+}
+.header-overlay p {
+    font-size: 14px;
+    margin: 4px 0 0;
+    letter-spacing: 1px;
+}
+.banner-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.banner-btn {
+    flex: 1;
+    background: white;
+    border: none;
+    padding: 14px 0;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    cursor: pointer;
+}
+.section-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 20px 0 12px;
+}
+.dishes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.dish-card {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+.dish-info h4 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.dish-category {
+    font-size: 11px;
+    color: #8c7355;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.dish-price {
+    font-weight: 800;
+    font-size: 15px;
+    color: #2b1d0c;
+}
+.dish-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f4efe6;
+    border-radius: 12px;
+    padding: 4px 8px;
+}
+.dish-controls button {
+    background: #4a2e18;
+    color: white;
+    border: none;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px;
+    box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    max-width: 480px;
+    margin: 0 auto;
+}
+.nav-item {
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #8c7355;
+    padding: 8px 16px;
+    border-radius: 14px;
+    cursor: pointer;
+}
+.nav-item.active {
+    background: #f4efe6;
+    color: #4a2e18;
+}
+#search-input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid #e6ded3;
+    background: white;
+    font-size: 15px;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+    outline: none;
+}
+.category-dropdown-container {
+    position: relative;
+    margin-bottom: 16px;
+}
+.category-toggle-btn {
+    width: 100%;
+    background: white;
+    border: 1px solid #e6ded3;
+    padding: 14px 16px;
+    border-radius: 14px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+}
+.category-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #e6ded3;
+    border-radius: 14px;
+    margin-top: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    z-index: 10;
+}
+.category-dropdown-content div {
+    padding: 12px 16px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.category-dropdown-content div:hover {
+    background: #f7f3ee;
+}
+.profile-card {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    margin-bottom: 16px;
+}
+.avatar {
+    width: 70px;
+    height: 70px;
+    background: #4a2e18;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 12px;
+}
+.profile-info-list {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    margin-bottom: 20px;
+}
+.profile-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f4efe6;
+    font-size: 15px;
+}
+.profile-row:last-child {
+    border-bottom: none;
+}
+.history-card {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+.history-top {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+.empty-cart {
+    text-align: center;
+    color: #8c7355;
+    margin-top: 40px;
+    font-weight: 600;
+}
+.cart-totals {
+    background: white;
+    border-radius: 16px;
+    padding: 16px;
+    margin-top: 16px;
+    font-weight: 600;
+}
+.total-final {
+    font-size: 18px;
+    font-weight: 800;
+    margin-top: 8px;
+    color: #4a2e18;
+}
+.order-type-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+}
+.order-btn {
+    flex: 1;
+    background: #4a2e18;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.promo-box {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+.promo-box input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #e6ded3;
+    outline: none;
+}
+.promo-box button {
+    background: #8c7355;
+    color: white;
+    border: none;
+    padding: 0 16px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
